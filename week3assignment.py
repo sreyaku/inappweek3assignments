@@ -49,18 +49,6 @@ class Pet(object):
             print("im full")
         self.clock_tick()
 
-    def play(self):
-        print("im so so happy!")
-        fun = randrange(0, self.Boredom_threshold)
-        self.Boredom += fun
-        if self.Boredom < 0:
-            self.Boredom = 0
-            print("im bored")
-        elif self.Boredom >= self.Boredom_threshold:
-            self.Boredom = self.Boredom_threshold
-            print("im really happy")
-        self.clock_tick()
-
 
 def main():
     pet_name = input("what do you want to name your pet?")
@@ -75,11 +63,10 @@ def main():
     while choice != 0:
         print(
             """*** Interaction with pet  ***
+         0-Quit
          1-Feed your pet
          2-Greet your pet
          3-Teach your pet
-         4-Play with your  pet
-         0-Quit
          """
         )
         choice = input("choice:")
@@ -92,8 +79,6 @@ def main():
         elif choice == '3':
             new_word = input("enter word you want to teach")
             my_pet.teach()
-        elif choice == "4":
-            my_pet.play()
         else:
             print('sorry,invalid choice')
 
